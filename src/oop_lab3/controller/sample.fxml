@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop_lab3.controller.Controller">
+   <children>
+   <MenuBar layoutX="-1.0" prefHeight="25.0" prefWidth="1300.0">
+      <menus>
+          <Menu mnemonicParsing="false" text="File">
+             <items>
+                 <MenuItem fx:id="openListMenuItem" mnemonicParsing="false" onAction="#openFile" text="Open File" />
+                 <MenuItem fx:id="menuItemSaveList" mnemonicParsing="false" onAction="#saveFile" text="Save File" />
+             </items>
+          </Menu>
+      </menus>
+   </MenuBar>
+   <TableView fx:id="tableView" layoutX="-1.0" layoutY="29.0" prefHeight="601.0" prefWidth="1300.0">
+       <columns>
+           <TableColumn fx:id="firstnameColumn" prefWidth="254.0" text="Firstname" />
+           <TableColumn fx:id="lastnameColumn" prefWidth="230.0" text="Lastname" />
+           <TableColumn fx:id="typeOfWorkColumn" prefWidth="178.0" text="Type of work" />
+           <TableColumn fx:id="ageColumn" maxWidth="454" prefWidth="228.0" text="Age" />
+           <TableColumn fx:id="resumeColumn" maxWidth="454" prefWidth="409.0" text="Resume" />
+       </columns>
+   </TableView>
+   <ChoiceBox fx:id="choiceBox" layoutX="552.0" layoutY="678.0" prefHeight="25.0" prefWidth="220.0" />
+   <Button fx:id="btnAdd" layoutX="818.0" layoutY="676.0" mnemonicParsing="false" onMouseClicked="#addWorker" prefHeight="28.0" prefWidth="73.0" text="Add">
+       <font>
+           <Font size="14.0" />
+       </font>
+   </Button>
+   <Button fx:id="btnEdit" layoutX="921.0" layoutY="676.0" mnemonicParsing="false" onMouseClicked="#editWorker" prefHeight="28.0" prefWidth="65.0" text="Edit">
+       <font>
+           <Font size="14.0" />
+       </font>
+   </Button>
+   <Button fx:id="btnDelete" layoutX="1015.0" layoutY="676.0" mnemonicParsing="false" onMouseClicked="#deleteWorker" prefHeight="28.0" prefWidth="73.0" text="Delete">
+       <font>
+           <Font size="14.0" />
+       </font>
+   </Button>
+      <Label layoutX="476.0" layoutY="679.0" text="Type:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <VBox layoutX="14.0" layoutY="644.0" prefHeight="91.0" prefWidth="234.0">
+         <children>
+         <Label text="Serialization/Deserialization:">
+             <font>
+                 <Font size="16.0" />
+             </font>
+         </Label>
+         <RadioButton fx:id="binaryMethod" mnemonicParsing="false" text="Binary">
+             <font>
+                 <Font size="16.0" />
+             </font>
+             <toggleGroup>
+                 <ToggleGroup fx:id="method" />
+             </toggleGroup>
+         </RadioButton>
+         <RadioButton mnemonicParsing="false" text="Xml" toggleGroup="$method" fx:id="xmlMethod">
+             <font>
+                 <Font size="16.0" />
+             </font>
+         </RadioButton>
+         <RadioButton fx:id="textMethod" mnemonicParsing="false" selected="true" text="Text" toggleGroup="$method">
+             <font>
+                 <Font size="16.0" />
+             </font>
+         </RadioButton>
+         </children>
+      </VBox>
+      <VBox layoutX="268.0" layoutY="644.0" prefHeight="91.0" prefWidth="100.0">
+         <children>
+         <Label text="Plugins">
+             <font>
+                 <Font size="16.0" />
+             </font>
+         </Label>
+         <CheckBox fx:id="checkBoxXMLtoJSON" mnemonicParsing="false" text="XMLtoJSON" />
+         <CheckBox fx:id="checkBoxToZip" mnemonicParsing="false" text="To ZIP" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
